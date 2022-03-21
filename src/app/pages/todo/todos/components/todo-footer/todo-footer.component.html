@@ -1,0 +1,17 @@
+<footer class="footer">
+  <span class="todo-count"
+    ><strong>{{ pendingTodos }}</strong> item left</span
+  >
+  <ul class="filters">
+    <ng-container *ngFor="let filter of filters">
+      <li (click)="changeFilter(filter)">
+        <a [class.selected]="filter === currentFilter">{{
+          filter | titlecase
+        }}</a>
+      </li>
+    </ng-container>
+  </ul>
+  <button class="clear-completed" (click)="clearCompleted()">
+    Clear completed
+  </button>
+</footer>
